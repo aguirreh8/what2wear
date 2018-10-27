@@ -1,8 +1,6 @@
 /*
  * Globals
  */
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 /* bootstrap overides */
 body{
 	font-family: 'Montserrat', sans-serif!important;
@@ -123,9 +121,10 @@ body {
 }
 .outfit-sugguestions img{
 	padding-bottom: 1vh;
+	min-height: 200px;
 }
 .outfit-sugguestions p.item-title{
-	height: 2em;
+	height: 3em;
 	font-size: .815em;
 }
 .outfit-sugguestions .button{

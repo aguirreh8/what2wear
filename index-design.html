@@ -27,7 +27,7 @@
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="#weather">Weather</a>
             <a class="nav-link" href="#sugguestions">Suggested Outfits</a>
-            <a class="nav-link" href="about.html">About Us</a>
+            <a class="nav-link" href="/about">About Us</a>
           </nav>
         </div>
       </header>
@@ -35,15 +35,15 @@
       <main id="gradient" role="main" class="inner cover">
         <div id="weather" class="card">
 		  <div class="card-body">
-		    <h5 class="card-title">75</h5>
-		    <h6 class="card-subtitle mb-2 text-muted">Slightly Rainy</h6>
-		    <p class="card-text">Feels like 55</p>
+		    <h5 class="card-title" id="tempature">75</h5>
+		    <h6 class="card-subtitle mb-2 text-muted" id="skytext">Slightly Rainy</h6>
+		    <p class="card-text">Feels like <span id="feelslike"></span></p>
 		  </div>
 		</div>
       </main>
 	  <div id="sugguestions" class="outfit-sugguestions">
 			<h3>What you should wear</h3>
-			<div class="card">
+			<!-- <div class="card">
 				<img src="https://via.placeholder.com/200"/>
 				<p class="item-title">Sample Item Title</p>
 				<a href="#" class="purchase button">Shop Now</a>
@@ -72,7 +72,7 @@
 				<img src="https://via.placeholder.com/200"/>
 				<p class="item-title">Sample Item Title</p>
 				<a href="#" class="purchase button">Shop Now</a>
-			</div>
+			</div> -->
 		</div>
 
       <footer class="mastfoot">
@@ -129,5 +129,30 @@ $('a[href*="#"]')
     }
   });
   </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+    $.get("/api/10001", function(data) {
+      // console.log(data);
+      $("#tempature").text(data[0].current.temperature);
+      $("#skytext").text(data[0].current.skytext);
+      $("#feelslike").text(data[0].current.feelslike);      
+    })
+
+    $.get('/ebay', function(data) {
+      console.log(data);
+      for (let i = 0; i < 6; i++) {
+        const div = $('<div class="card">');
+        const img = $(`<img src=${data[i].galleryURL[0]}>`);
+        const itemTitle = $("<p class='item-title'>");
+        const itemLink = $(`<a class='purchase button' href=${data[i].viewItemURL[0]}>`);
+
+        itemTitle.text(data[i].title[0]);
+        itemLink.text("Shop Now");
+
+        div.append(img, itemTitle, itemLink);
+        $("#sugguestions").append(div);
+      }
+    })
+  </script> 
   </body>
 </html>

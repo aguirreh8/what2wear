@@ -20,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",
+    "dotenv": "^6.1.0",
     "ebay": "0.0.1",
     "express": "^4.16.4",
     "path": "^0.12.7",

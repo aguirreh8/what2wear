@@ -2,9 +2,14 @@
  * Globals
  */
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+/* bootstrap overides */
 body{
 	font-family: 'Montserrat', sans-serif!important;
+	text-shadow: none!Important;
+}
+.card-text{
+	text-shadow: none!Important;
 }
 /* Links */
 a,
@@ -55,7 +60,7 @@ body {
 	color: #46B275;
 	text-shadow: none;
 }
-.card-title:after, .card-text:after{
+.home-page .card-title:after, .home-page .card-text:after{
 	content: "\00b0"
 }
 .card-subtitle{
@@ -76,6 +81,7 @@ body {
   margin-bottom: 0;
   font-size: 4em;
   text-align: center;
+  font-family: 'Permanent Marker', helvetica;
 }
 
 .nav-masthead .nav-link {
@@ -100,24 +106,20 @@ body {
   color: #fff;
   border-bottom-color: #0BB5FF;
 }
-.outfit-sugguestions h3{
+.masthead{
+	margin-bottom: 4vh!important;
+}
+.outfit-sugguestions h3, .about-us-cards h3{
 	margin: 3vh auto;
 }
 .outfit-sugguestions .card{
-	width: calc(33% - 10px);
-	display: inline-block;
-	margin: 0 6px;
-}
-.outfit-sugguestions .card:first-of-type{
-	margin-left: 0;
-}	
-
-.outfit-sugguestions .card:last-of-type{
-	margin-right: 0;
+    width: calc(50% - 20px);
+    display: inline-block;
+    margin: 10px 6px;
 }
 .outfit-sugguestions .card{
-	padding-top: 2vh;
-	padding-bottom: 2vh;
+	padding-top: 3.5vh;
+	padding-bottom: 3vh;
 }
 .outfit-sugguestions img{
 	padding-bottom: 1vh;
@@ -137,19 +139,54 @@ body {
 	text-decoration: none;
 	background-color: #0BB5FF;
 }
-.outfit-sugguestions p, .outfit-sugguestions a{
+#sugguestions .card p{
 	text-shadow: none;
 	color: #333;
+}
+#gradient{
+max-height: 400px;
+  background: #436EEE;
+  padding: 0;
+}
+.about-us-cards .card{
+	padding: 2vh;
+	margin: 2vh auto;
+	flex-direction: row;
+}
+.about-us-cards img{
+	flex: 200px;
+	max-height: 200px;
+}
+.about-us-cards .info-content{
+	flex: 100%;
+	text-align: left;
+	margin-left: 20px;
+}
+.about-us-cards .item-title{
+	font-size: 1.4em;
+}
+.about-us-cards p{
+	font-size: .815em;
+}
+.about-us-cards a{
+	color: #436EEE;
+	display: inline-block;
+	margin-top: 10px;
+}
+.about-us .card-subtitle{
+	color: #436EEE;
+	text-shadow: none;
 }
 /*
  * Cover
  */
 .cover {
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 .cover .btn-lg {
   padding: .75rem 1.25rem;
   font-weight: 700;
+
 }
 
 
@@ -157,5 +194,6 @@ body {
  * Footer
  */
 .mastfoot {
-  color: #fff;;
+	padding-top: 2vh;
+	color: #fff;;
 }

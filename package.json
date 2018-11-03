@@ -4,7 +4,9 @@
   "description": "New weather project thing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "ebay": "0.0.1",
     "express": "^4.16.4",
     "path": "^0.12.7",
+    "routes": "^2.1.0",
     "weather-js": "^2.0.0"
   }
 }
